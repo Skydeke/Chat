@@ -58,7 +58,7 @@ public class ServerWorker extends Thread {
                 clientSocket.getOutputStream().write(("nack " + msg.replace(" ", "°") + "\n").getBytes());
             }
         } else {
-            System.out.println("Error, wrong password.");
+            System.out.println("Error, wrong password or username");
             clientSocket.getOutputStream().write(("nack Error,°wrong°password. \n").getBytes());
         }
     }

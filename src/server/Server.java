@@ -61,9 +61,17 @@ public class Server extends Thread {
     }
 
     public boolean checkUserNameAndPassword(String[] tokens) {
-        if (allSavedUsers.get(tokens[1]).equals(tokens[2])) {
-            return true;
-        } else {
+        if (tokens[1] != null && tokens[2] != null) {
+            try {
+                if (allSavedUsers.get(tokens[1]).equals(tokens[2])) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }catch (NullPointerException e){
+                return false;
+            }
+        }else {
             return false;
         }
     }

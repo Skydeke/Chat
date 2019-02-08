@@ -61,8 +61,7 @@ public class LoginController implements Initializable {
 
                 String username = usernameField.getText();
                 String password = passwordField.getText();
-                if (ipAdress != null && port != null && username != null && password != null){
-                    try {
+                if (!"".equals(ipAdress) && !"".equals(port) && !"".equals(username) && !"".equals(password)){
                         Controller c = null;
                         if (clientRdBtn.isSelected()) {
                             c = new Controller(stage);
@@ -107,10 +106,6 @@ public class LoginController implements Initializable {
                                 errorLabel.setText("Can not connect.");
                             }
                         }
-                    } catch (NullPointerException e) {
-                        System.out.println("WTF! ERROR!! Try-Catch-LoginController.java");
-                        e.printStackTrace();
-                    }
                 }else {
                     errorLabel.setText("Fill all fields.");
                 }
