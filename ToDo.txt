@@ -7,3 +7,4 @@ x erledigt
 
 *Zeilenumbrüche bei langen Nachrichten
 -Uhrzeit(HH:mm) bei Nachrichten einfügen @JK
+#Protokolle in src/server/socketCommands.txt
