@@ -49,9 +49,13 @@ public class LoginController implements Initializable {
         ipAdresField.setText("localhost");
         portField.setText("8818");
 
-        //Test tooltip
-        Tooltip tooltip1 = new Tooltip("Click to Login");
-        loginBtn.setTooltip(tooltip1);
+        //Tooltips
+        Tooltip loginbtn = new Tooltip("Click to Login");
+        loginBtn.setTooltip(loginbtn);
+        Tooltip ipField = new Tooltip("Enter IP or domain");
+        ipAdresField.setTooltip(ipField);
+        Tooltip pFiled = new Tooltip("Enter Port (Default 8818)");
+        portField.setTooltip(pFiled);
 
         loginBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
