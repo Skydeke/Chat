@@ -50,7 +50,7 @@ public class LoginController implements Initializable {
         portField.setText("8818");
 
         //Test tooltip
-        Tooltip tooltip1 = new Tooltip("Test");
+        Tooltip tooltip1 = new Tooltip("Click to Login");
         loginBtn.setTooltip(tooltip1);
 
         loginBtn.setOnAction(new EventHandler<ActionEvent>() {
