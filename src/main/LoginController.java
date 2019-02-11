@@ -62,50 +62,50 @@ public class LoginController implements Initializable {
                 String username = usernameField.getText();
                 String password = passwordField.getText();
                 if (!"".equals(ipAdress) && !"".equals(port) && !"".equals(username) && !"".equals(password)){
-                        Controller c = null;
-                        if (clientRdBtn.isSelected()) {
-                            c = new Controller(stage);
-                            try {
-                                client = new Client(ipAdress, port, c);
-                                c.setClient(client);
-                                if (client.login(username, password)) {
-                                    client.start();
-                                    stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-                                        @Override
-                                        public void handle(WindowEvent event) {
-                                            client.stopThread();
-                                        }
-                                    });
-                                    main.switchScene("/fxmls/Interface.fxml", c);
-                                } else {
-                                    errorLabel.setText(client.getErrorMsg());
-                                }
-                            } catch (IOException e) {
-                                errorLabel.setText("Can not connect.");
+                    Controller c = null;
+                    if (clientRdBtn.isSelected()) {
+                        c = new Controller(stage);
+                        try {
+                            client = new Client(ipAdress, port, c);
+                            c.setClient(client);
+                            if (client.login(username, password)) {
+                                client.start();
+                                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                                    @Override
+                                    public void handle(WindowEvent event) {
+                                        client.stopThread();
+                                    }
+                                });
+                                main.switchScene("/fxmls/Interface.fxml", c);
+                            } else {
+                                errorLabel.setText(client.getErrorMsg());
                             }
-                        } else if (serverRdBtn.isSelected()) {
-                            //Server-Start-Code- here
-                            System.out.println("Server selected");
-                            c = new Controller(stage);
-                            try {
-                                client = new Client(ipAdress, port, c);
-                                c.setClient(client);
-                                if (client.login(username, password)) {
-                                    client.start();
-                                    stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-                                        @Override
-                                        public void handle(WindowEvent event) {
-                                            client.stopThread();
-                                        }
-                                    });
-                                    main.switchScene("/fxmls/Interface.fxml", c);
-                                } else {
-                                    errorLabel.setText(client.getErrorMsg());
-                                }
-                            } catch (IOException e) {
-                                errorLabel.setText("Can not connect.");
-                            }
+                        } catch (IOException e) {
+                            errorLabel.setText("Can not connect.");
                         }
+                    } else if (serverRdBtn.isSelected()) {
+                        //Server-Start-Code- here
+                        System.out.println("Server selected");
+                        c = new Controller(stage);
+                        try {
+                            client = new Client(ipAdress, port, c);
+                            c.setClient(client);
+                            if (client.login(username, password)) {
+                                client.start();
+                                stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                                    @Override
+                                    public void handle(WindowEvent event) {
+                                        client.stopThread();
+                                    }
+                                });
+                                main.switchScene("/fxmls/Interface.fxml", c);
+                            } else {
+                                errorLabel.setText(client.getErrorMsg());
+                            }
+                        } catch (IOException e) {
+                            errorLabel.setText("Can not connect.");
+                        }
+                    }
                 }else {
                     errorLabel.setText("Fill all fields.");
                 }
