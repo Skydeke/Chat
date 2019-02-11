@@ -6,5 +6,5 @@ x erledigt
 @ Person
 
 *Zeilenumbrüche bei langen Nachrichten
--Uhrzeit(HH:mm) bei Nachrichten einfügen @JK
+-Uhrzeit(HH:mm) bei Nachrichten einfügen @Jo0001
 #Protokolle in src/server/socketCommands.txt
