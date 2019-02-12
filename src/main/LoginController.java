@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import javafx.scene.control.Tooltip;
 import server.Server;
-
+import javafx.scene.control.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -87,6 +87,7 @@ public class LoginController implements Initializable {
                             }
                         } catch (IOException e) {
                             errorLabel.setText("Can not connect.");
+
                         }
                     } else if (serverRdBtn.isSelected()) {
                         Server server = new Server();
@@ -110,10 +111,16 @@ public class LoginController implements Initializable {
                             }
                         } catch (IOException e) {
                             errorLabel.setText("Can not connect.");
+
                         }
                     }
                 }else {
                     errorLabel.setText("Fill all fields.");
+                    //Maybe use Type ERROR
+                    Alert alert = new Alert(Alert.AlertType.WARNING, "Fill all fields.");
+                    alert.setHeaderText(null);
+                    alert.showAndWait();
+
                 }
             }
         });
