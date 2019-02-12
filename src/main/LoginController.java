@@ -111,6 +111,7 @@ public class LoginController implements Initializable {
                             }
                         } catch (IOException e) {
                             errorLabel.setText("Can not connect.");
+                            //Add Alert
 
                         }
                     }
