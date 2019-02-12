@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import javafx.scene.control.Tooltip;
+import server.Server;
 
 import java.io.IOException;
 import java.net.URL;
@@ -88,7 +89,8 @@ public class LoginController implements Initializable {
                             errorLabel.setText("Can not connect.");
                         }
                     } else if (serverRdBtn.isSelected()) {
-                        //Server-Start-Code- here
+                        Server server = new Server();
+                        server.start();
                         System.out.println("Server selected");
                         c = new Controller(stage);
                         try {
