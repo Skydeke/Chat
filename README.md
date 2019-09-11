@@ -1,2 +1,2 @@
 # Chat
-Readme here.
+A simple Chat-Application to talk during the lessions in school. 
